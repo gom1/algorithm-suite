@@ -42,3 +42,15 @@ def insertion_sort(input_list, x):
             sorted_list[i-1] = sorted_list[i]
             sorted_list[i] = temp_val
     return sorted_list
+
+def sort_with_insertion_sort(input_list):
+    """
+    Performs full insertion sort of any integer list and returns a sorted list
+    :param input_list: integer list (sorted or not)
+    :return: sorted list
+    """
+    sorted_array = []
+    for i in input_list:
+        sorted_array = insertion_sort(sorted_array, i)
+    return sorted_array
+
