@@ -78,6 +78,5 @@ class TestSortWithInsertionSort(unittest.TestCase):
         self.assertEqual(expected_list, result)
 
 
-
 if __name__ == '__main__':
     unittest.main()
