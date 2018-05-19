@@ -36,11 +36,11 @@ def insertion_sort(input_list, x):
     sorted_list.append(x)
     for i in reversed(xrange(1, len(input_list))):
         if sorted_list[i - 1] <= sorted_list[i]:
+            # order is sorted, so we can exit the loop
             break
         else:
-            temp_val = sorted_list[i - 1]
-            sorted_list[i-1] = sorted_list[i]
-            sorted_list[i] = temp_val
+            # swapping values in-place
+            sorted_list[i], sorted_list[i - 1] = sorted_list[i - 1], sorted_list [i]
     return sorted_list
 
 
