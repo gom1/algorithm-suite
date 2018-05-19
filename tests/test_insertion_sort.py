@@ -24,5 +24,27 @@ class TestInsertionSort(unittest.TestCase):
         result = insertion_sort(initial_list, x)
         self.assertEqual(expected_list, result)
 
+    def test_edge_case_end_of_list(self):
+        initial_list = [1, 2, 3, 4, 5]
+        x = 6
+        expected_list = [1, 2, 3, 4, 5, 6]
+        result = insertion_sort(initial_list, x)
+        self.assertEqual(expected_list, result)
+
+    def test_edge_case_beginning_of_list(self):
+        initial_list = [1, 2, 3, 4, 5]
+        x = 0
+        expected_list = [0, 1, 2, 3, 4, 5]
+        result = insertion_sort(initial_list, x)
+        self.assertEqual(expected_list, result)
+
+    def test_edge_case_number_exists_in_list(self):
+        initial_list = [1, 2, 3, 4, 5]
+        x = 4
+        expected_list = [0, 1, 2, 3, 4, 4, 5]
+        result = insertion_sort(initial_list, x)
+        self.assertEqual(expected_list, result)
+
+
 if __name__ == '__main__':
     unittest.main()
