@@ -54,3 +54,14 @@ def sort_with_insertion_sort(input_list):
     for i in input_list:
         sorted_array = insertion_sort(sorted_array, i)
     return sorted_array
+
+
+def sort_with_insertion_sort_in_place(input_list):
+    for i in xrange(1, len(input_list)):
+        for j in xrange(i, 0, -1):
+            if input_list[j - 1] < input_list[j]:
+                break
+            else:
+                input_list[j], input_list[j - 1] = input_list[j - 1], input_list[j]
+    return input_list
+
