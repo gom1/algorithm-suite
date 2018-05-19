@@ -27,15 +27,18 @@ make an insertion.
 
 def insertion_sort(input_list, x):
     """
-
-    :param input_array:
-    :param x:
-    :return:
+    Performs insertion sort and returns the new sorted array with x added to the list.
+    :param input_list: sorted list of integers
+    :param x: integer that will be added to the input_list
+    :return sorted_list: sorted list with x properly sorted in it
     """
     sorted_list = input_list
     sorted_list.append(x)
+    for i in reversed(xrange(1, len(input_list))):
+        if sorted_list[i - 1] <= sorted_list[i]:
+            break
+        else:
+            temp_val = sorted_list[i - 1]
+            sorted_list[i-1] = sorted_list[i]
+            sorted_list[i] = temp_val
     return sorted_list
-
-
-if __name__ == '__main__':
-    pass
