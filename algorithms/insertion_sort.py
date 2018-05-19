@@ -11,8 +11,8 @@ This operation is known as an insertion, and there are multiple ways to do it.
 
 -   Place x at the end of A.
 -   Compare x to the element on its left. There are three possibilities.
-    -   If there is no element to the left, then we are done, since x will be the smallest element and it is already at the
-        start of the array.
+    -   If there is no element to the left, then we are done, since x will be the smallest element and it is already at
+        the start of the array.
     -   If x is greater than or equal to it, then we are done; x is ahead of all smaller elements and behind all larger
         elements, so the array is once again sorted.
     -   If x is smaller, then it should be before the other element. Switch the two to put x on front.
@@ -36,12 +36,13 @@ def insertion_sort(input_list, x):
     sorted_list.append(x)
     for i in reversed(xrange(1, len(input_list))):
         if sorted_list[i - 1] <= sorted_list[i]:
+            # order is sorted, so we can exit the loop
             break
         else:
-            temp_val = sorted_list[i - 1]
-            sorted_list[i-1] = sorted_list[i]
-            sorted_list[i] = temp_val
+            # swapping values in-place
+            sorted_list[i], sorted_list[i - 1] = sorted_list[i - 1], sorted_list [i]
     return sorted_list
+
 
 def sort_with_insertion_sort(input_list):
     """
@@ -53,4 +54,14 @@ def sort_with_insertion_sort(input_list):
     for i in input_list:
         sorted_array = insertion_sort(sorted_array, i)
     return sorted_array
+
+
+def sort_with_insertion_sort_in_place(input_list):
+    for i in xrange(1, len(input_list)):
+        for j in xrange(i, 0, -1):
+            if input_list[j - 1] < input_list[j]:
+                break
+            else:
+                input_list[j], input_list[j - 1] = input_list[j - 1], input_list[j]
+    return input_list
 
