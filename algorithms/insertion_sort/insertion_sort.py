@@ -64,4 +64,3 @@ def sort_with_insertion_sort_in_place(input_list):
             else:
                 input_list[j], input_list[j - 1] = input_list[j - 1], input_list[j]
     return input_list
-
